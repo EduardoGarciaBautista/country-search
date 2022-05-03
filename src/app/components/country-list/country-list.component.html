@@ -1,0 +1,38 @@
+<ul class="country-list">
+  <li
+    class="country-list__element bordered"
+    *ngFor="let country of countryList">
+
+    <div class="element-wrapper">
+      <img
+        class="country-list__icon image-config"
+        [src]="country.icon"
+        alt="country image">
+      <span class="country-list__description">
+        {{country.description}}
+      </span>
+      <span class="country-list__description">
+        {{country.capital}}
+      </span>
+    </div>
+
+    <div class="element-wrapper">
+      <a
+        (click)="goToDetail(country)"
+        class="country-list__link">
+        Detail
+      </a>
+      <a
+        class="country-list__link"
+        target="_blank"
+        [href]="country.maps">
+        Open in google maps
+      </a>
+    </div>
+  </li>
+  <li
+    *ngIf="!search"
+    class="country-list__element country-list__element--empty bordered">
+    Empty results
+  </li>
+</ul>

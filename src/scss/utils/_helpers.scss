@@ -1,0 +1,26 @@
+@import "variables";
+@import "mixins";
+
+.bordered {
+  border: 1px solid $bordered-color;
+}
+
+.image-config {
+  object-fit: contain;
+  object-position: center;
+}
+
+.fade-in {
+  @include fadeIn()
+}
+
+.close-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: $color-red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

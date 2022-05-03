@@ -1,0 +1,20 @@
+<header class="header bordered">
+  <h1 class="header__title">Search country</h1>
+  <app-search (searchChanged)="getCountry($event)">
+  </app-search>
+</header>
+
+<main class="main">
+
+  <app-country-list
+    [search]="wordToSearch"
+    [countryList]="countryList">
+  </app-country-list>
+
+</main>
+
+<footer class="footer bordered">
+  <span class="footer__creator">
+    Developer: Eduardo García Butista
+  </span>
+</footer>

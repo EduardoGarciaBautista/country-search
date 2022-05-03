@@ -1,0 +1,7 @@
+<input
+  [(ngModel)]="value"
+  class="search bordered"
+  placeholder="Search here your country"
+  type="text"
+  appDebounce
+  (valueChange)="getSearchChange($event)">

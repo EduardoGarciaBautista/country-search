@@ -1,0 +1,61 @@
+<div class="detail-wrapper"
+     *ngIf="selected.selectedCountry as country">
+  <div class="detail bordered">
+
+    <section class="detail__image-container">
+      <div class="detail__close close-button" (click)="goBack()">X</div>
+      <img
+        class="image-config fade-in"
+        [src]="country.data.coatOfArms.png"
+        alt="country image">
+    </section>
+
+    <section class="detail__info">
+      <ng-container
+        [ngTemplateOutletContext]="{country: country}"
+        [ngTemplateOutlet]="info">
+      </ng-container>
+    </section>
+
+  </div>
+</div>
+
+
+<ng-template #info let-country="country">
+  <div class="country-info">
+    <span class="country-info__country-name">
+      {{country.description}}
+    </span>
+
+    <span>
+      Flag: <img
+      class="country-info__flag image-config fade-in"
+      [src]="country.icon" alt="ctry image">
+    </span>
+    <span>
+      Capital: {{country.data?.capital[0]}}
+    </span>
+
+    <span>
+      Latitude: {{country.data.latlng[0]}} - Longitude:
+      {{country.data.latlng[1]}}
+    </span>
+    <span>
+      Region: {{country.data.region}}
+    </span>
+
+    <span>
+      Population: {{country.data.population}}
+    </span>
+
+    <section>
+      <app-button (clicked)="goBack()">
+        Back
+      </app-button>
+
+      <app-button (clicked)="openInMaps(country.maps)">
+        Open in google maps
+      </app-button>
+    </section>
+  </div>
+</ng-template>

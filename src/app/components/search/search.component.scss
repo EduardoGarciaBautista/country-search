@@ -1,0 +1,19 @@
+@import "variables";
+
+.search {
+  height: $search-height;
+  border-radius: 30px;
+  background-color: $search-back-ground-color;
+  color: $white;
+  width: 30%;
+  padding: 0 1rem;
+  font-size: $font-size-20;
+  outline: none;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .search {
+    width: 90%;
+  }
+}

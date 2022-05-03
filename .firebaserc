@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "country-db016"
+  },
+  "targets": {
+    "country-db016": {
+      "hosting": {
+        "country-search": [
+          "country-db016"
+        ]
+      }
+    }
+  }
+}
