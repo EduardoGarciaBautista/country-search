@@ -11,17 +11,6 @@
   }
 }
 
-.footer {
-  height: 104px;
-  padding: 1rem;
-  box-sizing: border-box;
-
-  &__creator {
-    font-size: $font-size-20;
-  }
-}
-
-
 .main {
   display: flex;
   padding: 0 20%;
@@ -34,10 +23,31 @@
   }
 }
 
+.footer {
+  height: 104px;
+  padding: 1rem;
+  box-sizing: border-box;
+
+  &__creator {
+    font-size: $font-size-20;
+  }
+}
 
 
 @media only screen and (max-width: 767px) {
+
+  .header {
+    &__title {
+      font-size: $font-size-20;
+      font-weight: normal;
+    }
+  }
   .main {
     padding: 0 2%;
+    height: calc(100vh - 185px);
+  }
+
+  .footer {
+    height: 70px;
   }
 }
