@@ -13,20 +13,25 @@ export class HomeComponent implements OnInit {
 
   public wordToSearch = '';
 
+  public showSpinner = false;
+
   constructor(private countryService: CountryService) {
   }
 
   ngOnInit(): void {
+    this.getCountry();
   }
 
-  public getCountry(word: string): void {
-    this.wordToSearch = word;
+  public getCountry(): void {
+    this.showSpinner = true;
     this.countryList = [];
-    this.countryService.fetchCountryByName(word).subscribe(result => {
+    this.countryService.fetchCountryByName().subscribe(result => {
       this.countryList = result;
+      this.showSpinner = false;
     }, error => {
       this.countryList = [];
-      console.log('Can not get country');
+      console.log('Can not get country', error);
+      this.showSpinner = false;
     })
   }
 

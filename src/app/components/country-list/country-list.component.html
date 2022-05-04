@@ -1,7 +1,8 @@
 <ul class="country-list">
   <li
+    (click)="goToDetail(country)"
     class="country-list__element bordered"
-    *ngFor="let country of countryList">
+    *ngFor="let country of countryList | filter: search">
 
     <div class="element-wrapper">
       <img
@@ -18,11 +19,7 @@
 
     <div class="element-wrapper">
       <a
-        (click)="goToDetail(country)"
-        class="country-list__link">
-        Detail
-      </a>
-      <a
+        (click)="$event.stopImmediatePropagation()"
         class="country-list__link"
         target="_blank"
         [href]="country.maps">
@@ -31,7 +28,7 @@
     </div>
   </li>
   <li
-    *ngIf="!search"
+    *ngIf="!countryList.length"
     class="country-list__element country-list__element--empty bordered">
     Empty results
   </li>

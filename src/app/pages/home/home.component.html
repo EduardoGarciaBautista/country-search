@@ -1,6 +1,6 @@
 <header class="header bordered">
   <h1 class="header__title">Search country</h1>
-  <app-search (searchChanged)="getCountry($event)">
+  <app-search (searchChanged)="wordToSearch = $event">
   </app-search>
 </header>
 
@@ -18,3 +18,5 @@
     Developer: Eduardo García Butista
   </span>
 </footer>
+<app-loader *ngIf="showSpinner">
+</app-loader>

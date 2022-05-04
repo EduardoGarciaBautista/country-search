@@ -11,8 +11,9 @@
 }
 
 .fade-in {
-  @include fadeIn()
+  @include fadeIn();
 }
+
 
 .close-button {
   width: 30px;

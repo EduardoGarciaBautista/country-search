@@ -5,6 +5,26 @@ body {
   margin: 0;
   background-color: $color-15202b;
   color: $white;
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $white;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $search-back-ground-color;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
 
 * {
@@ -19,3 +39,4 @@ header, main, footer {
   width: 100%;
   text-align: center;
 }
+

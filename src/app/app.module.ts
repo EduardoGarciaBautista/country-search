@@ -16,6 +16,8 @@ import {FormsModule} from '@angular/forms';
 import {AngularFireModule} from '@angular/fire/compat';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import {environment} from '../environments/environment';
+import { FilterPipe } from './pipes/filter.pipe';
+import { LoaderComponent } from './components/loader/loader.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import {environment} from '../environments/environment';
     HomeComponent,
     SearchComponent,
     DebounceDirective,
-    CountryListComponent
+    CountryListComponent,
+    FilterPipe,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

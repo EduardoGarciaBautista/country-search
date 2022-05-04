@@ -1,0 +1,62 @@
+@import "variables";
+@import "mixins";
+
+.loader {
+  background: $color-loader-bg;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  &__spin {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid $color-loader-spin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 42%;
+    left: 46%;
+
+    &--animate {
+      @include rotate(2000ms);
+    }
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+
+    &--top {
+      top: -7px;
+    }
+
+    &--bottom {
+      bottom: -7px;
+    }
+
+    &--left {
+      left: -7px;
+    }
+
+    &--right {
+      right: -7px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 767px) {
+  .loader {
+    &__spin {
+      left: 36%;
+    }
+  }
+}
+
